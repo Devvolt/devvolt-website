@@ -504,3 +504,24 @@ footer span a:hover{
         line-height: 38px;
     }
 }
+.secretMenu{
+    width: 100%;
+    display: flex;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 32px;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.secretBtn{
+    display: grid;
+    background: #5c5959;
+}
