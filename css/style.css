@@ -508,11 +508,9 @@ footer span a:hover{
     width: 100%;
     display: flex;
     background: #1c1c1c;
-    color: #fff;
     font-size: 25px;
     padding: 12px 32px;
     font-weight: 400;
-    border-radius: 4px;
     transition: all 0.3s ease;
     height: 100vh;
     color: #fff;
@@ -522,6 +520,25 @@ footer span a:hover{
     font-family: 'Ubuntu', sans-serif;
 }
 .secretBtn{
+    display: -ms-grid;
     display: grid;
     background: #5c5959;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    border-radius: 1.4rem;
+}
+.secretBtn:hover{
+    margin: 0.5rem;
+    padding: 1.5rem;
+}
+.secretArea{
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 9rem;
+    padding: 1rem
 }
