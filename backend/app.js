@@ -15,7 +15,7 @@ app.get("/portfolio/genericboi", (req, res) => {
 
 app.get('/secret', (req, res) =>{
   console.log(`WebReq detected from ${req.ip} to SecretMenu!!`)
-  res.sendFile('C:/inetpub/wwwroot/secret/index.html');
+  res.sendFile('C:/inetpub/wwwroot/devvolt/secret/index.html');
 });
 
 //CSS
