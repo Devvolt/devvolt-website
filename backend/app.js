@@ -11,7 +11,14 @@ app.get("/portfolio/genericboi", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/portfolio/genericboi.html");
 });
 
-//css
+//secret menu
+
+app.get('/secret', (req, res) =>{
+  console.log(`WebReq detected from ${req.ip} to SecretMenu!!`)
+  res.sendFile('C:/inetpub/wwwroot/secret/index.html');
+});
+
+//CSS
 
 app.get("/css/style.css", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/css/style.css");
@@ -20,6 +27,7 @@ app.get("/css/style.css", (req, res) => {
 app.get("/css/diocane.css", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/css/diocane.css");
 });
+
 // JS 
 
 app.get("/js/main.js", (req, res) => {
