@@ -1,12 +1,17 @@
+//libs
 const express = require("express");
 const app = express();
+
 //url
+
 app.get("/", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/index.html");
 });
+
 app.get("/portfolio/guglieee", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/portfolio/guglieee.html");
 });
+
 app.get("/portfolio/genericboi", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/portfolio/genericboi.html");
 });
