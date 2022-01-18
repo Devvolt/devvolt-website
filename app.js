@@ -19,7 +19,7 @@ const sslServer = https.createServer(
 //URLs
 
 app.get("/", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/index.html");
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get("/portfolio/guglieee", (req, res) => {
@@ -27,40 +27,40 @@ app.get("/portfolio/guglieee", (req, res) => {
 });
 
 app.get("/portfolio/genericboi", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/portfolio/genericboi.html");
+  res.sendFile(path.join(__dirname, 'portfolio', 'genericboi', 'index.html'));
 });
 
 //secret menu
 
 app.get("/secret", (req, res) => {
   console.log(`WebReq detected from ${req.ip} to SecretMenu!!`);
-  res.sendFile(path.join(__dirname, '..', 'secret', 'index.html'));
+  res.sendFile(path.join(__dirname, 'secret', 'index.html'));
 });
 
 //CSS
 
 app.get("/css/style.css", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/css/style.css");
+  res.sendFile(path.join(__dirname, 'css', 'style.css'));
 });
 
 // JS
 
 app.get("/js/main.js", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/js/main.js");
+  res.sendFile(path.join(__dirname, 'js', 'main.js'));
 });
 
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/img/devvolt.png");
+  res.sendFile(path.join(__dirname, 'img', 'devvolt.png'));
 });
 
-app.get("/img/whentheimpostor", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/img/devvolt.png");
+app.get("/img/whentheimpostor.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'img', 'whentheimpostor.png'));
 });
 
 app.get("/img/whenthe.png", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/img/whenthe.png");
+  res.sendFile(path.join(__dirname, 'img', 'whenthe.png'));
 });
 
 // Dashboard
