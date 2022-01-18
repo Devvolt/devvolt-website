@@ -10,8 +10,8 @@ const app = express();
 //SSL
 const sslServer = https.createServer(
   {
-    key: fs.readFileSync(path.join(__dirname, "cert", 'public.key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, "cert", 'private.key.pem')),
+    key: fs.readFileSync(path.join(__dirname, "cert", "private.key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "cert", "domain.cert.pem")),
   },
   app
 );
@@ -34,7 +34,7 @@ app.get("/portfolio/genericboi", (req, res) => {
 
 app.get("/secret", (req, res) => {
   console.log(`WebReq detected from ${req.ip} to SecretMenu!!`);
-  res.sendFile("C:/inetpub/wwwroot/devvolt/secret/index.html");
+  res.sendFile(path.join(__dirname, '..', 'secret', 'index.html'));
 });
 
 //CSS
@@ -62,6 +62,13 @@ app.get("/img/whentheimpostor", (req, res) => {
 app.get("/img/whenthe.png", (req, res) => {
   res.sendFile("C:/inetpub/wwwroot/devvolt/img/whenthe.png");
 });
+
+// Dashboard
+app.get("/dashboard", (req, res) => {
+  res.sendFile("C:/Users/Administrator/Desktop/buffolollo bot v2 (13)/dashboard/views/index.ejs");
+  res.redirect('https://bot.devvolt.dev');
+});
+
 
 //Server Listener (HTTPS)
 sslServer.listen(443, () => {
