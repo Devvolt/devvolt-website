@@ -22,62 +22,72 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get("/portfolio/guglieee", (req, res) => {
-  res.sendFile("C:/inetpub/wwwroot/devvolt/portfolio/guglieee.html");
-});
-
 app.get("/portfolio/genericboi", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'genericboi', 'index.html'));
 });
 
-//secret menu
-
-app.get("/secret", (req, res) => {
-  console.log(`WebReq detected from ${req.ip} to SecretMenu!!`);
-  res.sendFile(path.join(__dirname, 'secret', 'index.html'));
+/*
+app.get("/dvd", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd/index.html'));
 });
+*/
 
 //CSS
 
 app.get("/css/style.css", (req, res) => {
   res.sendFile(path.join(__dirname, 'css', 'style.css'));
 });
-
 // JS
 
 app.get("/js/main.js", (req, res) => {
-  res.sendFile(path.join(__dirname, 'js', 'main.js'));
+  res.sendFile(path.join(__dirname, 'js/main.js'));
+});
+app.get("/dvd/main.js", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd/main.js'));
 });
 
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img', 'devvolt.png'));
+  res.sendFile(path.join(__dirname, 'img/devvolt.png'));
 });
-
 app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img', 'whentheimpostor.png'));
+  res.sendFile(path.join(__dirname, 'img/whentheimpostor.png'));
 });
-
 app.get("/img/whenthe.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img', 'whenthe.png'));
+  res.sendFile(path.join(__dirname, 'img/whenthe.png'));
+});
+app.get("/img/whentheimpostor.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd/favicon.png'));
 });
 
-// Dashboard
-app.get("/dashboard", (req, res) => {
-  res.sendFile("C:/Users/Administrator/Desktop/buffolollo bot v2 (13)/dashboard/views/index.ejs");
-  res.redirect('https://bot.devvolt.dev');
+// SVG
+/*
+app.get("logos/dvdlogo-01.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd/logos/dvdlogo-01.svg'));
 });
-
+app.get("logos/dvdlogo-02.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-02.svg'));
+});
+app.get("logos/dvdlogo-03.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-03.svg'));
+});
+app.get("logos/dvdlogo-04.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-04.svg'));
+});
+app.get("logos/dvdlogo-05.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-05.svg'));
+});
+app.get("logos/dvdlogo-06.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-06.svg'));
+});
+app.get("logos/dvdlogo-07.png", (req, res) => {
+  res.sendFile(path.join(__dirname, 'dvd', 'logos', 'dvdlogo-07.svg'));
+});
+*/
+//TODO: dashboard
 
 //Server Listener (HTTPS)
 sslServer.listen(443, () => {
   console.log(`HTTPS server started 🚀...`);
 });
-
-/*
-Server Listener (HTTP)
-app.listen("5500", () => {
-  console.log(`HTTP Server started...`);
-});
-*/
