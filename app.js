@@ -49,6 +49,9 @@ app.get("/js/main.js", (req, res) => {
 app.get("/dvd/main.js", (req, res) => {
   res.sendFile(path.join(__dirname, 'dvd/main.js'));
 });
+app.get('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css'));
+});
 
 //IMGs
 
