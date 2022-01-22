@@ -52,7 +52,12 @@ app.get("/dvd/main.js", (req, res) => {
 app.get('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', (req, res) => {
   res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css'));
 });
-
+app.get('/node_modules/jquery/dist/jquery.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/node_modules/jquery/dist/jquery.js'));
+});
+app.get('/node_modules/owl.carousel/dist/owl.carousel.min.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/owl.carousel.min.js'));
+});
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
