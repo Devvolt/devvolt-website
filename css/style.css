@@ -577,7 +577,7 @@ footer span a:hover{
     color: #ffffff;
 }
 .portfolio-donate{
-    display: flex;
+    display: grid;
     position: absolute;
     border-radius: 0.6rem;
     background:#1c1c1c;
@@ -592,8 +592,8 @@ footer span a:hover{
     position: absolute;
     padding: 1rem;
     margin: 2rem;
-    margin-top: 40rem;
-    margin-left: 100rem;
+    margin-top: 28rem;
+    margin-left: 85rem;
     background:#1c1c1c;
     color: #ffffff;
 }

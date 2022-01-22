@@ -66,9 +66,11 @@ app.get("/img/whenthe.png", (req, res) => {
   res.sendFile(path.join(__dirname, 'img/whenthe.png'));
 });
 app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'dvd/favicon.png'));
+  res.sendFile(path.join(__dirname, 'img/whentheimpostor.png'));
 });
-
+app.get("/img/genericboieth.png", (req, res) => {
+  res.sendFile(path.join(__dirname, '/img/genericboieth.png'));
+});
 // SVG
 /*
 app.get("logos/dvdlogo-01.png", (req, res) => {
