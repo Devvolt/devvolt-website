@@ -42,12 +42,7 @@ $(document).ready(function () {
     backSpeed: 100,
     loop: true,
   });
-  var typed3 = new Typed(".typing-3", {
-    strings: ["Gugliee"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    loop: true,
-  });
+
   // owl carousel
   $(".carousel").owlCarousel({
     margin: 20,
