@@ -544,21 +544,56 @@ footer span a:hover{
 }
 .portfolio-twitch-embed{
     position: absolute;
+    border-radius: 0.6rem;
     padding: 1rem;
-    margin: 2rem;
-    margin-top: 30rem;
+    margin: 5rem;
+    margin-top: 35rem;
     background-color: #1c1c1c;
 }
 .portfolio-desc1{ 
+    border-radius: 0.6rem;
     position: absolute;
+    padding: 1rem;
+    margin: 2rem;
+    margin-top: 14rem;
+    margin-left: 19rem;
+    background:#1c1c1c;
+    color: #ffffff;
+}
+.portfolio-desc1-content{
+    margin: 1rem;
+    padding-left: 1rem;
+    border-radius: 0.6rem;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+.portfolio-pfp{
+    position: absolute;
+    border-radius: 0.6rem;
     padding: 1rem;
     margin: 2rem;
     margin-top: 10rem;
     background:#1c1c1c;
     color: #ffffff;
 }
-.portfolio-desc1-content{
-    margin-left: 1rem;
+.portfolio-donate{
+    display: flex;
+    position: absolute;
+    border-radius: 0.6rem;
+    background:#1c1c1c;
     color: #ffffff;
-    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 2rem;
+    margin-top: 40rem;
+    margin-left: 60rem;
+}
+.portfolio-desc2{
+    border-radius: 0.6rem;
+    position: absolute;
+    padding: 1rem;
+    margin: 2rem;
+    margin-top: 40rem;
+    margin-left: 100rem;
+    background:#1c1c1c;
+    color: #ffffff;
 }
