@@ -30,17 +30,15 @@ app.get("/portfolio/gugliee", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'gugliee', 'index.html'));
 });
 
-/*
-app.get("/dvd", (req, res) => {
-  res.sendFile(path.join(__dirname, 'dvd/index.html'));
-});
-*/
-
 //CSS
 
 app.get("/css/style.css", (req, res) => {
   res.sendFile(path.join(__dirname, 'css', 'style.css'));
 });
+app.get('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css'));
+});
+
 // JS
 
 app.get("/js/main.js", (req, res) => {
@@ -49,9 +47,7 @@ app.get("/js/main.js", (req, res) => {
 app.get("/dvd/main.js", (req, res) => {
   res.sendFile(path.join(__dirname, 'dvd/main.js'));
 });
-app.get('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', (req, res) => {
-  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css'));
-});
+
 app.get('/node_modules/jquery/dist/jquery.js', (req, res) => {
   res.sendFile(path.join(__dirname, '/node_modules/jquery/dist/jquery.js'));
 });
@@ -70,9 +66,11 @@ app.get("/img/whenthe.png", (req, res) => {
   res.sendFile(path.join(__dirname, 'img/whenthe.png'));
 });
 app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'dvd/favicon.png'));
+  res.sendFile(path.join(__dirname, 'img/whentheimpostor.png'));
 });
-
+app.get("/img/genericboieth.png", (req, res) => {
+  res.sendFile(path.join(__dirname, '/img/genericboieth.png'));
+});
 // SVG
 /*
 app.get("logos/dvdlogo-01.png", (req, res) => {
