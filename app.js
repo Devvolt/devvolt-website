@@ -26,6 +26,10 @@ app.get("/portfolio/genericboi", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'genericboi', 'index.html'));
 });
 
+app.get("/portfolio/gugliee", (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio', 'gugliee', 'index.html'));
+});
+
 /*
 app.get("/dvd", (req, res) => {
   res.sendFile(path.join(__dirname, 'dvd/index.html'));

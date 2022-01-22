@@ -31,13 +31,19 @@ $(document).ready(function () {
   });
   // animazione
   var typed = new Typed(".typing", {
-    strings: ["SCANSAFATICHE :D"],
+    strings: ["SCANSAFATICHE"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true,
   });
   var typed2 = new Typed(".typing-2", {
     strings: ["Devvolt"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true,
+  });
+  var typed3 = new Typed(".typing-3", {
+    strings: ["Gugliee"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true,
