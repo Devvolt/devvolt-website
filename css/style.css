@@ -95,7 +95,7 @@ section .titolo::after{
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: #5c5959;
+    color: #000000;
     font-size: 35px;
     font-weight: 600;
 }
