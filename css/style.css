@@ -28,6 +28,13 @@ html{
     background: #5c5959;
 }
 /* all similar content styling codes */
+
+/* SELECTION */
+::selection{
+    color: #fff;
+    background: #5c5959;
+}
+
 section{
     padding: 100px 0;
 }
