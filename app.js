@@ -30,6 +30,22 @@ app.get("/portfolio/gugliee", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'gugliee', 'index.html'));
 });
 
+app.get("/portfolio/brasilianodev", (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+});
+
+app.get("/portfolio/buffolollo", (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+});
+
+app.get("/portfolio/nwonsn0w", (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+});
+
+app.get("/portfolio/gianmpr", (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+});
+
 //CSS
 
 app.get("/css/style.css", (req, res) => {
