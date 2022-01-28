@@ -38,7 +38,7 @@ app.get("/portfolio/buffolollo", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
 });
 
-app.get("/portfolio/nwonsn0w", (req, res) => {
+app.get("/portfolio/neonsn0w", (req, res) => {
   res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
 });
 
