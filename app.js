@@ -19,73 +19,91 @@ const sslServer = https.createServer(
 //URLs
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/portfolio/genericboi", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'genericboi', 'index.html'));
+  res.sendFile(path.join(__dirname, "portfolio", "genericboi", "index.html"));
 });
 
 app.get("/portfolio/gugliee", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'gugliee', 'index.html'));
+  res.sendFile(path.join(__dirname, "portfolio", "gugliee", "index.html"));
 });
 
 app.get("/portfolio/brasilianodev", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'brasilianodev', 'index.html'));
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
 });
 
 app.get("/portfolio/buffolollo", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
 });
 
 app.get("/portfolio/neonsn0w", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
 });
 
 app.get("/portfolio/gianmpr", (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio', 'workinprogress', 'index.html'));
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
 });
 
 //CSS
 
 app.get("/css/style.css", (req, res) => {
-  res.sendFile(path.join(__dirname, 'css', 'style.css'));
+  res.sendFile(path.join(__dirname, "css", "style.css"));
 });
-app.get('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', (req, res) => {
-  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css'));
-});
+app.get(
+  "/node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+  (req, res) => {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+      )
+    );
+  }
+);
 
 // JS
 
 app.get("/js/main.js", (req, res) => {
-  res.sendFile(path.join(__dirname, 'js/main.js'));
+  res.sendFile(path.join(__dirname, "js/main.js"));
 });
 app.get("/dvd/main.js", (req, res) => {
-  res.sendFile(path.join(__dirname, 'dvd/main.js'));
+  res.sendFile(path.join(__dirname, "dvd/main.js"));
 });
 
-app.get('/node_modules/jquery/dist/jquery.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '/node_modules/jquery/dist/jquery.js'));
+app.get("/node_modules/jquery/dist/jquery.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "/node_modules/jquery/dist/jquery.js"));
 });
-app.get('/node_modules/owl.carousel/dist/owl.carousel.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '/node_modules/owl.carousel/dist/owl.carousel.min.js'));
+app.get("/node_modules/owl.carousel/dist/owl.carousel.min.js", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "/node_modules/owl.carousel/dist/owl.carousel.min.js")
+  );
 });
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img/devvolt.png'));
+  res.sendFile(path.join(__dirname, "img/devvolt.png"));
 });
 app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img/whentheimpostor.png'));
+  res.sendFile(path.join(__dirname, "img/whentheimpostor.png"));
 });
 app.get("/img/whenthe.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img/whenthe.png'));
+  res.sendFile(path.join(__dirname, "img/whenthe.png"));
 });
 app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, 'img/whentheimpostor.png'));
+  res.sendFile(path.join(__dirname, "img/whentheimpostor.png"));
 });
 app.get("/img/genericboieth.png", (req, res) => {
-  res.sendFile(path.join(__dirname, '/img/genericboieth.png'));
+  res.sendFile(path.join(__dirname, "/img/genericboieth.png"));
 });
 // SVG
 /*
