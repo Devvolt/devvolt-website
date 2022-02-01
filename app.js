@@ -51,6 +51,12 @@ app.get("/portfolio/gianmpr", (req, res) => {
   );
 });
 
+app.get("/portfolio/Red_Fox", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
 
 //CSS
 
