@@ -57,6 +57,18 @@ app.get("/portfolio/Red_Fox", (req, res) => {
   );
 });
 
+app.get("/portfolio/somty", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
+app.get("/portfolio/SonoLuca", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
 app.get("/projects/vollex-os", (req, res) => {
   res.sendFile(
     path.join(__dirname, "projects", "VollexOS", "index.html")
