@@ -57,6 +57,11 @@ app.get("/portfolio/Red_Fox", (req, res) => {
   );
 });
 
+app.get("/projects/vollex-os", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "projects", "VollexOS", "index.html")
+  );
+});
 
 //CSS
 
