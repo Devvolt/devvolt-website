@@ -1,17 +1,14 @@
 //libs
-const express = require("express");
+const app = require("express")();
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
 
-//env var
-const app = express();
-
 //SSL
 const sslServer = https.createServer(
   {
-    key: fs.readFileSync(path.join(__dirname, "cert", "private.key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "cert", "domain.cert.pem")),
+    key: fs.readFileSync(path.join(__dirname, "..", "cert", "private.key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "..","cert", "domain.cert.pem")),
   },
   app
 );
