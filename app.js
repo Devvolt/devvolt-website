@@ -8,7 +8,9 @@ const fs = require("fs");
 const sslServer = https.createServer(
   {
     key: fs.readFileSync(path.join(__dirname, "..", "cert", "private.key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "..","cert", "domain.cert.pem")),
+    cert: fs.readFileSync(
+      path.join(__dirname, "..", "cert", "domain.cert.pem")
+    ),
   },
   app
 );
@@ -70,9 +72,7 @@ app.get("/portfolio/SonoLuca", (req, res) => {
 });
 
 app.get("/projects/vollex-os", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "projects", "VollexOS", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "projects", "VollexOS", "index.html"));
 });
 
 //CSS
