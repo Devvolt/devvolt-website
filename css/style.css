@@ -430,7 +430,7 @@ footer span a:hover {
     background: #111;
     text-align: center;
     padding-top: 80px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   .navbar .menu.active {
     left: 0;
