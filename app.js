@@ -153,6 +153,6 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 //TODO: dashboard
 
 //Server Listener (HTTPS)
-sslServer.listen(80,() => {
+sslServer.listen(443,() => {
   console.log(`HTTPS server started 🚀...`);
 });
