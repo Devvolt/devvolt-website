@@ -18,7 +18,7 @@ const sslServer = https.createServer(
 //URLs
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "index.php"));
 });
 
 app.get("/portfolio/genericboi", (req, res) => {
@@ -109,6 +109,8 @@ app.get("/node_modules/owl.carousel/dist/owl.carousel.min.js", (req, res) => {
     path.join(__dirname, "/node_modules/owl.carousel/dist/owl.carousel.min.js")
   );
 });
+
+
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
