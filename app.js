@@ -112,7 +112,7 @@ app.get("/node_modules/owl.carousel/dist/owl.carousel.min.js", (req, res) => {
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
-  res.sendFile(path.join(__dirname, "img/devvolt.png"));
+  res.sendFile(path.join(__dirname, "img/2.png"));
 });
 app.get("/img/whentheimpostor.png", (req, res) => {
   res.sendFile(path.join(__dirname, "img/whentheimpostor.png"));
@@ -152,7 +152,9 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 */
 //TODO: dashboard
 
+const port = 443
+
 //Server Listener (HTTPS)
-sslServer.listen(443,() => {
-  console.log(`HTTPS server started 🚀...`);
+sslServer.listen(port,() => {
+  console.log(`HTTPS server started on ${port} 🚀...`);
 });
