@@ -52,15 +52,6 @@
             <li><a href="#home" class="menu-drn">HOME</a></li>
             <li><a href="#informazioni" class="menu-drn">INFO</a></li>
             <li><a href="#developers" class="menu-drn">STAFF</a></li>
-            <?php
-            if (isset($_SESSION["useruid"])) {
-                echo "<li><a href='profile.php' class='menu-drn'>Profilo</a></li>";
-                echo "<li><a href='includes/logout.inc.php' class='menu-drn'>LOG OUT</a></li>";
-            } else {
-                echo "<li><a href='register.php' class='menu-drn'>REGISTRATI</a></li>";
-                echo "<li><a href='login.php' class='menu-drn'>LOG IN</a></li>";
-            }
-            ?>
         </ul>
         <div class="menu-drn">
             <i class="fas fa-bars"></i>
@@ -71,9 +62,6 @@
     <section class="home" id="home">
       <div class="max-width">
         <div class="home-content">
-          <?php
-          echo "<h1>Benvenuto" . $_SESSION["useruid"] . "!</h1>"
-          ?>
           <div class="text-1">Benvenuto nel sito ufficiale dei</div>
           <div class="text-2">DEVVOLT</div>
           <div class="text-3">Developers <span class="typing"></span></div>
@@ -198,7 +186,7 @@
             <div class="box">
               <a href="./portfolio/Red_Fox/" class="link">
                 <img
-                  src="https://cdn.discordapp.com/avatars/743826625489272926/1c2d42470687c8579f12af267b196e95.png?size=1024"
+                  src="https://cdn.discordapp.com/avatars/743826625489272926/a_e81d0fb13c3144bd9981dedb43f0aacc.gif?size=1024"
                   alt=""
                 />
                 <div class="text">Red_Fox</div>

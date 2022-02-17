@@ -18,7 +18,7 @@ const sslServer = https.createServer(
 //URLs
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.php"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/portfolio/genericboi", (req, res) => {
