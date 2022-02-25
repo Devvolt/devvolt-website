@@ -49,14 +49,12 @@ app.get("/portfolio/neonsn0w", (req, res) => {
 
 app.get("/portfolio/gianmpr", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+    path.join(__dirname, "portfolio", "gianmpr", "index.html")
   );
 });
 
 app.get("/portfolio/Red_Fox", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "portfolio", "redfox", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "portfolio", "redfox", "index.html"));
 });
 
 app.get("/portfolio/somty", (req, res) => {
@@ -66,6 +64,12 @@ app.get("/portfolio/somty", (req, res) => {
 });
 
 app.get("/portfolio/SonoLuca", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
+app.get("./portfolio/Nikuez/", (req, res) => {
   res.sendFile(
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
@@ -110,7 +114,6 @@ app.get("/node_modules/owl.carousel/dist/owl.carousel.min.js", (req, res) => {
   );
 });
 
-
 //IMGs
 
 app.get("/img/devvolt.png", (req, res) => {
@@ -154,9 +157,9 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 */
 //TODO: dashboard
 
-const port = 443
+const port = 443;
 
 //Server Listener (HTTPS)
-sslServer.listen(port,() => {
+sslServer.listen(port, () => {
   console.log(`HTTPS server started on ${port} 🚀...`);
 });
