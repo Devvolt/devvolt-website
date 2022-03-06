@@ -31,15 +31,20 @@ $(document).ready(function () {
   });
   // animazione
   var typed = new Typed(".typing", {
-    strings: ["SCANSAFATICHE"],
-    typeSpeed: 100,
+    strings: ["SCANSAFATICHE", "NULLAFACENTI","SENZA VITA SOCIALE", "SENZA IMMAGINAZIONE","DA NON IMITARE", "DA NON COPIARE"],
+    typeSpeed: 90,
     backSpeed: 100,
+    startDelay: 800,
+    backDelay: 900,
+    smartBackspace: true,
     loop: true,
   });
   var typed2 = new Typed(".typing-2", {
     strings: ["Devvolt"],
     typeSpeed: 100,
     backSpeed: 100,
+    startDelay: 800,
+    backDelay: 900,
     loop: true,
   });
 

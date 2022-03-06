@@ -87,13 +87,13 @@
             <p><a href="mailto:info@gugliee.it" class="link">info@gugliee.it</a></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card"><a href="https://twitch.tv/guglieeee" class="link"> 
           <div class="box">
             <i class="fab fa-twitch"></i>
             <div class="text">Stream</div>
             <p> Faccio stream </p>
-            <div id="twitch-embed"></div>
-          </div>
+          
+          </div></a>
         </div>
         <div class="card">
           <div class="box">
@@ -104,6 +104,113 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
+
+  <section class="timestamp" id="timestamp">
+    <div class="max-width">
+      <h2 class="titolo2">DISCORD TIMESTAMP GENERATOR</h2>
+      <div class="timestamp-content">
+          <div class="container">
+            <p>Ottieni una visualizzazione dinamica della data e dell'ora nei tuoi messaggi Discord. Scegli il tuo orario e copia il codice qui sotto.</p>
+          </div>
+          <div class="container">
+            <span>Data</span><input type="date" id="d">
+            <span>Ora</span><input type="time" id="hm">
+            <span>Metodo</span>
+            <select id="t">
+              <option value="t">Fascia oraria Corta</option>
+              <option value="T">Fascia oraria Lunga</option>
+              <option value="d">Data corta</option>
+              <option value="D">Data lunga</option>
+              <option value="f">Data corta con lunga fascia oraria</option>
+              <option value="F">Data lunga con un giorno e la data corta</option>
+              <option value="R" selected>Relativo</option>
+            </select>
+            <span>Output</span><span id="preview"></span>
+            <input type="text" readonly id="code" title="Press Ctrl/Cmd+C to copy"><button id="copy">Copia</button>
+            <button id="current">Ripristina</button>
+          </div>
+          <script>
+          const dateInput = document.getElementById('d');
+          const timeInput = document.getElementById('hm');
+          const typeInput = document.getElementById('t');
+          const output = document.getElementById('code');
+          const copy = document.getElementById('copy');
+          const current = document.getElementById('current');
+          const preview = document.getElementById('preview');
+          
+          dateInput.onchange = updateOutput;
+          timeInput.onchange = updateOutput;
+          typeInput.onchange = updateOutput;
+          output.onmouseover = function() { this.select(); }
+          copy.onclick = async () => {
+            updateOutput();
+            try {
+              await navigator.clipboard.writeText(output.value);
+              alert("Copiato con successo");
+            } catch (e) {
+              alert(e);
+            }
+          }
+          
+          const onload =_=> {
+            const now = new Date();
+            dateInput.value = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
+            timeInput.value = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            updateOutput();
+          }
+          window.onload = onload;
+          current.onclick = onload;
+          
+          const typeFormats = {
+            't': { timeStyle: 'short' },
+            'T': { timeStyle: 'medium' },
+            'd': { dateStyle: 'short' },
+            'D': { dateStyle: 'long' },
+            'f': { dateStyle: 'long', timeStyle: 'short' },
+            'F': { dateStyle: 'full', timeStyle: 'short' },
+            'R': { style: 'long', numeric: 'auto' },
+          };
+          
+          function automaticRelativeDifference(d) {
+            const diff = -((new Date().getTime() - d.getTime())/1000)|0;
+            const absDiff = Math.abs(diff);
+            console.log(diff);
+            if (absDiff > 86400*30*10) {
+              return { duration: Math.round(diff/(86400*365)), unit: 'years' };
+            }
+            if (absDiff > 86400*25) {
+              return { duration: Math.round(diff/(86400*30)), unit: 'months' };
+            }
+            if (absDiff > 3600*21) {
+              return { duration: Math.round(diff/86400), unit: 'days' };
+            }
+            if (absDiff > 60*44) {
+              return { duration: Math.round(diff/3600), unit: 'hours' };
+            }
+            if (absDiff > 30) {
+              return { duration: Math.round(diff/60), unit: 'minutes' };
+            }
+            return { duration: diff, unit: 'seconds' };
+          }
+          
+          function updateOutput() {
+            const selectedDate = new Date(`${dateInput.value} ${timeInput.value}`);
+            const ts = selectedDate.getTime().toString();
+            output.value = `<t:${ts.substr(0, ts.length - 3)}:${typeInput.value}>`;
+          
+            if (['R'].includes(typeInput.value)) {
+              const formatter = new Intl.RelativeTimeFormat(navigator.language || 'en', typeFormats[typeInput.value] || {});
+              const format = automaticRelativeDifference(selectedDate);
+              preview.textContent = formatter.format(format.duration, format.unit);
+            } else {
+              const formatter = new Intl.DateTimeFormat(navigator.language || 'en', typeFormats[typeInput.value] || {});
+              preview.textContent = formatter.format(selectedDate);
+            }
+          }
+          </script>
+      </div>
     </div>
   </section>
 

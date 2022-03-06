@@ -45,7 +45,7 @@ section {
 }
 .informazioni,
 .servizi,
-.staff,
+.staff, .timestamp,
 footer {
   font-family: "Montserrat", sans-serif;
 }
@@ -77,6 +77,36 @@ section .titolo::before {
   transform: translateX(-50%);
 }
 section .titolo::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: #5c5959;
+  padding: 0 5px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+section .titolo2 {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Staatliches", cursive;
+  color: #5c5959;
+}
+section .titolo2::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 100px;
+  height: 3px;
+  background: #5c5959;
+  transform: translateX(-50%);
+}
+section .titolo2::after {
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -285,6 +315,14 @@ section .titolo::after {
 }
 .servizi .titolo::after,
 .staff .titolo::after {
+  background: #5c5959;
+}
+.servizi .titolo2::before,
+.staff .titolo2::before {
+  background: #5c5959;
+}
+.servizi .titolo2::after,
+.staff .titolo2::after {
   background: #5c5959;
 }
 .servizi .serv-content .card {
@@ -545,4 +583,52 @@ footer span a:hover {
   padding: 100px;
   width: 25%;
   height: 100%;
+}
+
+.timestamp, .titolo2 {
+  padding-top: 50px;
+}
+
+.timestamp {
+  margin: 0;
+  padding: 0;
+  background: #161620;
+  color: #eee;
+  font-family: sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  width: 50rem;
+  margin: 0 auto;
+  border-right: 1px solid #666;
+  border-left: 1px solid #666;
+  padding: 1rem;
+}
+.container > * {
+  margin: 0.2rem;
+}
+#current {
+  grid-column: span 2;
+}
+input,
+select,
+button {
+  background: #383842;
+  color: #fff;
+  border: 1px solid #666;
+}
+#code {
+  font-family: monospace;
+}
+
+@media (max-width: 50rem) {
+  div.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  div.container > * {
+    margin: 1rem 0.2rem;
+  }
 }

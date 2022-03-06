@@ -48,9 +48,7 @@ app.get("/portfolio/neonsn0w", (req, res) => {
 });
 
 app.get("/portfolio/gianmpr", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "portfolio", "gianmpr", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "portfolio", "gianmpr", "index.html"));
 });
 
 app.get("/portfolio/Red_Fox", (req, res) => {
@@ -61,6 +59,14 @@ app.get("/portfolio/somty", (req, res) => {
   res.sendFile(
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
+});
+
+app.get("/ts", (req, res) => {
+  res.redirect("ts3server://borders.voicehosting.it");
+});
+
+app.get("/database", (req, res) => {
+  res.redirect("https://fdo-manager.web.app/");
 });
 
 app.get("/portfolio/SonoLuca", (req, res) => {
