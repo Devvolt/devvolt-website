@@ -29,6 +29,10 @@ $(document).ready(function () {
     $(".navbar .menu").toggleClass("active");
     $(".menu-drn i").toggleClass("active");
   });
+  $(".menu-drn").click(function () {
+    $(".navbar .menu").toggleClass("open");
+    $(".menu-drn").toggleClass("open");
+  });
   // animazione
   var typed = new Typed(".typing", {
     strings: ["SCANSAFATICHE", "NULLAFACENTI","SENZA VITA SOCIALE", "SENZA IMMAGINAZIONE","DA NON IMITARE", "DA NON COPIARE"],
