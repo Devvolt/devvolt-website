@@ -3,6 +3,7 @@ const app = require("express")();
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
+const hsts = require("helmet");
 
 //SSL
 const sslServer = https.createServer(
@@ -14,6 +15,26 @@ const sslServer = https.createServer(
   },
   app
 );
+
+app.use(
+  hsts({
+    maxAge: 31536000, // Must be at least 1 year to be approved
+    includeSubDomains: true, // Must be enabled to be approved
+    preload: true,
+  })
+);
+
+const hstsMiddleware = hsts({
+  maxAge: 1234000
+})
+ 
+app.use((req, res, next) => {
+  if (req.secure) {
+    hstsMiddleware(req, res, next)
+  } else {
+    next()
+  }
+})
 
 //URLs
 
@@ -69,16 +90,32 @@ app.get("/database", (req, res) => {
   res.redirect("https://fdo-manager.web.app/");
 });
 
+app.get("/sitoomega", (req, res) => {
+  res.redirect("http://185.229.237.130");
+});
+
+app.get("/discord", (req, res) => {
+  res.redirect("https://discord.gg/nC65WDFTUz");
+});
+
+app.get("/fivem", (req, res) => {
+  res.redirect("https://cfx.re/join/656z74");
+});
+
 app.get("/portfolio/SonoLuca", (req, res) => {
   res.sendFile(
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
 });
 
-app.get("./portfolio/Nikuez/", (req, res) => {
+app.get("/portfolio/Nikuez/", (req, res) => {
   res.sendFile(
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
+});
+
+app.get("/bordersrp/", (req, res) => {
+  res.sendFile(path.join(__dirname, "bordersrp", "index.html"));
 });
 
 app.get("/projects/vollex-os", (req, res) => {
@@ -89,6 +126,9 @@ app.get("/projects/vollex-os", (req, res) => {
 
 app.get("/css/style.css", (req, res) => {
   res.sendFile(path.join(__dirname, "css", "style.css"));
+});
+app.get("/css/styleborders.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "css", "styleborders.css"));
 });
 app.get(
   "/node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
@@ -107,8 +147,8 @@ app.get(
 app.get("/js/main.js", (req, res) => {
   res.sendFile(path.join(__dirname, "js/main.js"));
 });
-app.get("/dvd/main.js", (req, res) => {
-  res.sendFile(path.join(__dirname, "dvd/main.js"));
+app.get("/js/mainborders.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "js/mainborders.js"));
 });
 
 app.get("/node_modules/jquery/dist/jquery.js", (req, res) => {
@@ -162,6 +202,8 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 });
 */
 //TODO: dashboard
+
+
 
 const port = 443;
 
