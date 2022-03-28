@@ -3,7 +3,7 @@ const app = require("express")();
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
-const hsts = require("helmet");
+const hsts = require("hsts");
 
 //SSL
 const sslServer = https.createServer(
