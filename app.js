@@ -18,23 +18,23 @@ const sslServer = https.createServer(
 
 app.use(
   hsts({
-    maxAge: 31536000, // Must be at least 1 year to be approved
-    includeSubDomains: true, // Must be enabled to be approved
+    maxAge: 31536000,
+    includeSubDomains: true,
     preload: true,
   })
 );
 
 const hstsMiddleware = hsts({
-  maxAge: 1234000
-})
- 
+  maxAge: 1234000,
+});
+
 app.use((req, res, next) => {
   if (req.secure) {
-    hstsMiddleware(req, res, next)
+    hstsMiddleware(req, res, next);
   } else {
-    next()
+    next();
   }
-})
+});
 
 //URLs
 
@@ -82,6 +82,18 @@ app.get("/portfolio/somty", (req, res) => {
   );
 });
 
+app.get("/portfolio/Mawku", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
+app.get("/portfolio/elauqzz", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+  );
+});
+
 app.get("/ts", (req, res) => {
   res.redirect("ts3server://borders.voicehosting.it");
 });
@@ -102,21 +114,12 @@ app.get("/fivem", (req, res) => {
   res.redirect("https://cfx.re/join/656z74");
 });
 
-app.get("/portfolio/SonoLuca", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "portfolio", "workinprogress", "index.html")
-  );
-});
-
 app.get("/portfolio/Nikuez/", (req, res) => {
   res.sendFile(
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
 });
 
-app.get("/bordersrp/", (req, res) => {
-  res.sendFile(path.join(__dirname, "bordersrp", "index.html"));
-});
 
 app.get("/projects/vollex-os", (req, res) => {
   res.sendFile(path.join(__dirname, "projects", "VollexOS", "index.html"));
@@ -147,9 +150,7 @@ app.get(
 app.get("/js/main.js", (req, res) => {
   res.sendFile(path.join(__dirname, "js/main.js"));
 });
-app.get("/js/mainborders.js", (req, res) => {
-  res.sendFile(path.join(__dirname, "js/mainborders.js"));
-});
+
 
 app.get("/node_modules/jquery/dist/jquery.js", (req, res) => {
   res.sendFile(path.join(__dirname, "/node_modules/jquery/dist/jquery.js"));
@@ -168,15 +169,18 @@ app.get("/img/devvolt.png", (req, res) => {
 app.get("/img/whentheimpostor.png", (req, res) => {
   res.sendFile(path.join(__dirname, "img/whentheimpostor.png"));
 });
-app.get("/img/whenthe.png", (req, res) => {
-  res.sendFile(path.join(__dirname, "img/whenthe.png"));
+app.get("/img/devvoltwallpaper.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "img/devvoltwallpaper.png"));
 });
-app.get("/img/whentheimpostor.png", (req, res) => {
-  res.sendFile(path.join(__dirname, "img/whentheimpostor.png"));
+app.get("/img/whentheimposterisgay.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "img/whentheimposterisgay.png"));
 });
 app.get("/img/genericboieth.png", (req, res) => {
   res.sendFile(path.join(__dirname, "/img/genericboieth.png"));
 });
+app.get("/img/wallpapertelefonodevvolt.png",(req,res) => {
+  res.sendFile(path.join(__dirname, "/img/wallpapertelefonodevvolt.png"))
+})
 // SVG
 /*
 app.get("logos/dvdlogo-01.png", (req, res) => {
@@ -204,6 +208,10 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 //TODO: dashboard
 
 
+// 404 PAGE
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "errors", "404.html"));
+});
 
 const port = 443;
 

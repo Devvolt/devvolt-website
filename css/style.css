@@ -45,7 +45,8 @@ section {
 }
 .informazioni,
 .servizi,
-.staff, .timestamp,
+.staff,
+.timestamp,
 footer {
   font-family: "Montserrat", sans-serif;
 }
@@ -153,7 +154,16 @@ section .titolo2::after {
 }
 .navbar .menu li a {
   display: block;
-  color: #fff;
+  color: #5c5959;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar.sticky .menu li a {
+  display: block;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
   margin-left: 25px;
@@ -204,10 +214,9 @@ section .titolo2::after {
 /* home */
 .home {
   display: flex;
-  background: url("https://c.tenor.com/_4YgA77ExHEAAAAC/rick-roll.gif")
-    no-repeat center;
+  background: url("/img/devvoltwallpaper.png") no-repeat center;
   height: 100vh;
-  color: #fff;
+  color: #5c5959;
   min-height: 500px;
   background-size: cover;
   background-attachment: fixed;
@@ -452,32 +461,55 @@ footer span a:hover {
   }
 }
 @media (max-width: 947px) {
+  .home {
+    background: url("/img/wallpapertelefonodevvolt.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   .menu-drn {
     display: block;
     z-index: 999;
   }
-  .menu-btn__burger{
+  .navbar.sticky .menu-btn__burger {
     width: 50px;
     height: 6px;
     background: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
-  .menu-btn__burger::before, .menu-btn__burger::after{
-    content: '';
+  .navbar.sticky .menu-btn__burger::before,
+  .navbar.sticky .menu-btn__burger::after {
+    content: "";
     position: absolute;
     width: 50px;
     height: 6px;
     background: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
-  .menu-btn__burger::before{
+  .menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before {
     transform: translateY(-16px);
   }
-  .menu-btn__burger::after{
+  .menu-btn__burger::after {
     transform: translateY(16px);
   }
   .menu-drn.open .menu-btn__burger {
@@ -485,10 +517,10 @@ footer span a:hover {
     background: transparent;
     box-shadow: none;
   }
-  .menu-drn.open .menu-btn__burger::before{
+  .menu-drn.open .menu-btn__burger::before {
     transform: rotate(45deg) translate(35px, -35px);
   }
-  .menu-drn.open .menu-btn__burger::after{
+  .menu-drn.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
   }
   .menu-drn i.active:before {
@@ -620,7 +652,8 @@ footer span a:hover {
   height: 100%;
 }
 
-.timestamp, .titolo2 {
+.timestamp,
+.titolo2 {
   padding-top: 50px;
 }
 
@@ -666,4 +699,15 @@ button {
   div.container > * {
     margin: 1rem 0.2rem;
   }
+}
+.ciao2 {
+  width: 90px;
+  padding: -20px;
+  margin: -30px;
+}
+.navbar.sticky .logo {
+  -webkit-filter: drop-shadow(5px 5px 8px #000000);
+  filter: drop-shadow(5px 5px 8px #000000);
+  translate: -10px;
+  transition: filter 0.8s;
 }

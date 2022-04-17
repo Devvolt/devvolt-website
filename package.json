@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "express": "^4.17.2",
-    "helmet": "^5.0.2",
     "hsts": "^2.2.0",
     "nodemon": "^2.0.15",
     "npm": "^8.3.1",
