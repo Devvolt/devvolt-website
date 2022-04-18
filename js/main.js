@@ -35,7 +35,7 @@ $(document).ready(function () {
   });
   // animazione
   var typed = new Typed(".typing", {
-    strings: ["SCANSAFATICHE", "NULLAFACENTI","SENZA VITA SOCIALE", "SENZA IMMAGINAZIONE","DA NON IMITARE", "DA NON COPIARE"],
+    strings: ["SCANSAFATICHE", "SENZA VITA SOCIALE", "SENZA IMMAGINAZIONE"],
     typeSpeed: 90,
     backSpeed: 100,
     startDelay: 800,

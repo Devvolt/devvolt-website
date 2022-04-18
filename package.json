@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "hsts": "^2.2.0",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
     "npm": "^8.3.1",
     "owl.carousel": "^2.3.4"

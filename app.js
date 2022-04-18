@@ -1,9 +1,27 @@
 //libs
-const app = require("express")();
+const express = require("express");
 const https = require("https");
+const mysql = require("mysql");
 const path = require("path");
 const fs = require("fs");
 const hsts = require("hsts");
+
+const app = express();
+
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "nodejs",
+});
+
+db.connect((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Connesso al db");
+  }
+});
 
 //SSL
 const sslServer = https.createServer(
@@ -83,15 +101,11 @@ app.get("/portfolio/somty", (req, res) => {
 });
 
 app.get("/portfolio/Mawku", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "portfolio", "workinprogress", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "portfolio", "mawku", "index.html"));
 });
 
 app.get("/portfolio/elauqzz", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "portfolio", "workinprogress", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "portfolio", "elauqzz", "index.html"));
 });
 
 app.get("/ts", (req, res) => {
@@ -119,7 +133,6 @@ app.get("/portfolio/Nikuez/", (req, res) => {
     path.join(__dirname, "portfolio", "workinprogress", "index.html")
   );
 });
-
 
 app.get("/projects/vollex-os", (req, res) => {
   res.sendFile(path.join(__dirname, "projects", "VollexOS", "index.html"));
@@ -151,7 +164,6 @@ app.get("/js/main.js", (req, res) => {
   res.sendFile(path.join(__dirname, "js/main.js"));
 });
 
-
 app.get("/node_modules/jquery/dist/jquery.js", (req, res) => {
   res.sendFile(path.join(__dirname, "/node_modules/jquery/dist/jquery.js"));
 });
@@ -178,9 +190,9 @@ app.get("/img/whentheimposterisgay.png", (req, res) => {
 app.get("/img/genericboieth.png", (req, res) => {
   res.sendFile(path.join(__dirname, "/img/genericboieth.png"));
 });
-app.get("/img/wallpapertelefonodevvolt.png",(req,res) => {
-  res.sendFile(path.join(__dirname, "/img/wallpapertelefonodevvolt.png"))
-})
+app.get("/img/wallpapertelefonodevvolt.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "/img/wallpapertelefonodevvolt.png"));
+});
 // SVG
 /*
 app.get("logos/dvdlogo-01.png", (req, res) => {
@@ -206,7 +218,6 @@ app.get("logos/dvdlogo-07.png", (req, res) => {
 });
 */
 //TODO: dashboard
-
 
 // 404 PAGE
 app.get("*", (req, res) => {

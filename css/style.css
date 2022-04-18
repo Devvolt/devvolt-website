@@ -462,7 +462,7 @@ footer span a:hover {
 }
 @media (max-width: 947px) {
   .home {
-    background: url("/img/wallpapertelefonodevvolt.png") no-repeat center center fixed;
+    background: url("/img/wallpapertelefonodevvolt.png") no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -519,9 +519,11 @@ footer span a:hover {
   }
   .menu-drn.open .menu-btn__burger::before {
     transform: rotate(45deg) translate(35px, -35px);
+    background: #ffffff;
   }
   .menu-drn.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
+    background: #ffffff;
   }
   .menu-drn i.active:before {
     content: "\f00d";
