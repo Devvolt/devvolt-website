@@ -12,7 +12,7 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args)); // Import node-fetch asynchronously; see https://www.npmjs.com/package/node-fetch#installation for more info on why this is done.
 const { Client, WebhookClient } = require("discord.js");
 const client = new Client({ intents: 32767, partials: ["CHANNEL"] });
-const {Token} = require('./config.json');
+const {Token, webhook} = require('./config.json');
 
 const Token = "OTU1NDczMTg5NjgzNzQ0NzY5.YjiLwA.cc5hsgBHeAyrjLgaY39yDYX9Pv4";
 
@@ -178,7 +178,7 @@ app.post("/whitelist/ok", (req, res) => {
   console.log("Test ok");
   console.log(req.body);
   new WebhookClient({
-    url: "https://discord.com/api/webhooks/985668052295233586/XZbWVtwYBYLcfZBx3ueLCFIZsI_3KOc7tPmTkMzm-eKCtUSa4_dmgyV0cMlyNsvy7Zdw",
+    url: webhook,
   }).send({ content: req.body });
   // client.guilds.cache.get("914655607028613190").members.cache.get(req.body).roles.add("979995762538721331")
 });
