@@ -12,6 +12,7 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args)); // Import node-fetch asynchronously; see https://www.npmjs.com/package/node-fetch#installation for more info on why this is done.
 const { Client, WebhookClient } = require("discord.js");
 const client = new Client({ intents: 32767, partials: ["CHANNEL"] });
+const {Token} = require('./config.json');
 
 const Token = "OTU1NDczMTg5NjgzNzQ0NzY5.YjiLwA.cc5hsgBHeAyrjLgaY39yDYX9Pv4";
 
