@@ -6191,3 +6191,4 @@ node_modules/.bin/npm
 node_modules/.bin/npm.ps1
 node_modules/.bin/npx
 node_modules/.bin/npx.ps1
+config.json
