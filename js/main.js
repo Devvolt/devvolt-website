@@ -35,11 +35,11 @@ $(document).ready(function () {
   });
   // animazione
   var typed = new Typed(".typing", {
-    strings: ["SCANSAFATICHE", "SENZA VITA SOCIALE", "SENZA IMMAGINAZIONE"],
+    strings: ["DEVVOLT"],
     typeSpeed: 90,
     backSpeed: 100,
-    startDelay: 800,
-    backDelay: 900,
+    startDelay: 500,
+    backDelay: 15000,
     smartBackspace: true,
     loop: true,
   });

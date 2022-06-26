@@ -1,11 +1,18 @@
 {
   "dependencies": {
-    "express": "^4.17.2",
+    "audit": "^0.0.6",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "discord.js": "^13.8.0",
+    "express": "^4.18.1",
     "express-session": "^1.17.2",
     "hsts": "^2.2.0",
     "mysql": "^2.18.1",
+    "node-fetch": "^3.2.6",
     "nodemon": "^2.0.15",
     "npm": "^8.3.1",
-    "owl.carousel": "^2.3.4"
+    "owl.carousel": "^2.3.4",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
   }
 }
