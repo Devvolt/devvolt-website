@@ -14,8 +14,6 @@ const { Client, WebhookClient } = require("discord.js");
 const client = new Client({ intents: 32767, partials: ["CHANNEL"] });
 const {Token, webhook} = require('./config.json');
 
-const Token = "OTU1NDczMTg5NjgzNzQ0NzY5.YjiLwA.cc5hsgBHeAyrjLgaY39yDYX9Pv4";
-
 client.on("ready", () => {
   console.log("Pronto");
 });
@@ -191,7 +189,7 @@ app.get("/portfolio/buffolollo", (req, res) => {
 
 app.get("/portfolio/neonsn0w", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "portfolio", "workinprogress", "index.html")
+    path.join(__dirname, "portfolio", "neonsn0w", "index.html")
   );
 });
 
@@ -323,6 +321,12 @@ app.get("/img/genericboieth.png", (req, res) => {
 });
 app.get("/img/wallpapertelefonodevvolt.png", (req, res) => {
   res.sendFile(path.join(__dirname, "/img/wallpapertelefonodevvolt.png"));
+});
+app.get("/img/neonsn0w.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "/img/neonsn0w.png"));
+});
+app.get("/img/neonsn0wpfp.jpg", (req, res) => {
+  res.sendFile(path.join(__dirname, "/img/neonsn0wpfp.jpg"));
 });
 
 // 404 PAGE
